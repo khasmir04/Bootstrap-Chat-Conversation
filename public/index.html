@@ -9,7 +9,63 @@
   </head>
   <body>
     <!--  -->
-
+    <header id="header">
+      <div class="container-fluid header-container p-3">
+        <div class="row">
+          <div class="col-lg-2 d-flex">
+            <div class="header__avatar__image">
+              <img class="header__avatar__img" src="../public/img/avatar.png" alt="avatar-image">
+            </div>
+            <div>
+              <p class="m-0">Team UI</p>
+              <p class="m-0">Team@dimo.com</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div>
+              <p class="m-0">Message</p>
+              <p class="m-0">Send your friends a message</p>
+            </div>
+          </div>
+          <div class="col-lg-6"></div>
+          <div class="col-lg-1"></div>
+        </div>
+      </div>
+    </header>
+    <aside id="side-menu">
+      <div>Dashboard</div>'
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link active">Dashboard</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">E-Wallet</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Chat</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Profile</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Transaction</a></li>
+      </ul>
+    </aside>
+    <main>
+      <section id="inbox">
+        <div class="container-fluid inbox-container h-100">
+          <div class="row h-100">
+            <div class="col-3 col-xxl-3 h-100 bg-danger" data-simplebar>
+              <div id="contacts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus optio quisquam blanditiis, quibusdam suscipit ut voluptates porro similique vero neque velit natus aspernatur. Facere odit sunt perferendis est, expedita praesentium ducimus eaque molestias possimus consectetur laborum, doloribus adipisci voluptates non iure quasi commodi voluptatum debitis eius aut numquam. Et, deleniti?</div>
+            </div>
+            <div id="visible-scroll" class="col-6 col-xxl-6 h-100" data-simplebar data-simplebar-auto-hide="false">
+              <div id="conversation">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus optio quisquam blanditiis, quibusdam suscipit ut voluptates porro similique vero neque velit natus aspernatur. Facere odit sunt perferendis est, expedita praesentium ducimus eaque molestias possimus consectetur laborum, doloribus adipisci voluptates non iure quasi commodi voluptatum debitis eius aut numquam. Et, deleniti?</div>
+            </div>
+            <div class="col-3 col-xxl-3 h-100 bg-danger">
+              <div id="contact-info"></div>Lorem</div>
+          </div>
+        </div>
+      </section>
+    </main>
     <script src="./js/app.js"></script>
+    <script>
+      // new SimpleBar(document.getElementById('visible-scroll'), { autoHide: false });
+    </script>
   </body>
 </html>

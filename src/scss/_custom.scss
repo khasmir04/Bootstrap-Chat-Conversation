@@ -1,0 +1,43 @@
+body {
+  overflow: hidden;
+}
+
+#header {
+  height: 80px;
+}
+
+#side-menu {
+  position: fixed;
+  width: 220px;
+  height: calc(100vh - 80px);
+  left: 0;
+  bottom: 0;
+}
+
+#inbox {
+  width: calc(100vw - 220px);
+  margin-left: auto;
+  height: calc(100vh - 80px);
+}
+
+#contacts {
+  height: 100%;
+}
+
+#conversation {
+  height: 100%;
+}
+
+#contact-info {
+  height: 100%;
+}
+
+.header__avatar__image {
+  max-width: 48px;
+  width: 100%;
+}
+
+.header__avatar__img {
+  height: 48px;
+  width: 48px;
+}
