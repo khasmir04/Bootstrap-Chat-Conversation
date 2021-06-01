@@ -1,2 +1,2 @@
 import "bootstrap";
-import "simplebar/dist/simplebar"
+import "simplebar/dist/simplebar";

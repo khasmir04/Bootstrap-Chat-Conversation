@@ -1,5 +1,6 @@
 body {
   overflow: hidden;
+  font-family: "Ubuntu", sans-serif;
 }
 
 #header {
@@ -15,7 +16,7 @@ body {
 }
 
 #inbox {
-  width: calc(100vw - 220px);
+  width: 100vw;
   margin-left: auto;
   height: calc(100vh - 80px);
 }
@@ -32,6 +33,16 @@ body {
   height: 100%;
 }
 
+.logo__image {
+  max-width: 140px;
+  width: 100%;
+}
+
+.logo__img {
+  width: 137px;
+  height: 24px;
+}
+
 .header__avatar__image {
   max-width: 48px;
   width: 100%;
@@ -40,4 +51,88 @@ body {
 .header__avatar__img {
   height: 48px;
   width: 48px;
+}
+
+.user__avatar__image {
+  max-width: 40px;
+  width: 100%;
+}
+
+.user__avatar__img {
+  height: 40px;
+  width: 40px;
+}
+
+.contacts__content {
+  height: calc(100vh - 200px);
+}
+
+.contacts__conversation:hover {
+  background: $light;
+}
+
+.contact__avatar__image {
+  max-width: 48px;
+  width: 100%;
+}
+
+.contact__avatar__img {
+  height: 48px;
+  width: 48px;
+}
+
+.contact-info__profile__image {
+  max-width: 104px;
+  width: 100%;
+}
+
+.contact-info__profile__img {
+  width: 104px;
+  height: 104px;
+}
+
+.conversation {
+  height: calc(100vh - 80px);
+}
+
+.conversation__header {
+  height: 80px;
+}
+
+.conversation__header__image {
+  width: 100%;
+  max-width: 48px;
+}
+
+.conversation__header__img {
+  height: 48px;
+  width: 48px;
+}
+
+.conversation__input {
+  height: 72px;
+}
+
+.conversation__messages {
+  max-height: calc(100vh - 232px);
+}
+
+//Utilities
+.link-unstyled {
+  text-decoration: none !important;
+}
+
+// Medium
+@media (min-width: 768px) {
+}
+
+// Large
+@media (min-width: 992px) {
+}
+
+// XLarge
+@media (min-width: 1200px) {
+  #inbox {
+    width: calc(100vw - 220px);
+  }
 }
