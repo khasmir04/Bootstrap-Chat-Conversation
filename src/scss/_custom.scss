@@ -66,6 +66,10 @@ body {
   height: calc(100vh - 200px);
 }
 
+.contacts__conversation.active {
+  background: $active-chat;
+}
+
 .contacts__conversation:hover {
   background: $light;
 }
@@ -197,9 +201,41 @@ body {
   height: 40px;
 }
 
-//Utilities
+.notif.active {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: $white;
+  line-height: 16px;
+  margin-left: auto;
+  background: $secondary;
+  border-radius: 50%;
+  padding: 4px 8px;
+}
+
+.nav-link.active {
+  i,
+  span {
+    color: $primary !important;
+  }
+  background: linear-gradient(90deg, #f1f0f9 100%, rgba(241, 240, 249, 0) 0%);
+}
+
+//ADD TO BOOTSTRAP Utilities
 .link-unstyled {
   text-decoration: none !important;
+}
+
+.lh-24 {
+  line-height: 24px;
+}
+
+.p-12 {
+  padding: 12px;
+}
+
+.square {
+  width: 32px;
+  height: 32px;
 }
 
 .swiper-container {
