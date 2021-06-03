@@ -7,6 +7,7 @@
     <title>Chat Dashboard</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/app.css" />
   </head>
   <body>
@@ -55,7 +56,7 @@
     </header>
     <main>
       <aside id="side-menu" class="border-end">
-        <div class="logo__image mt-c-40 mb-5"><img class="logo__img" src="../public/img/logo.png" alt=""></div>
+        <div class="logo__image"><img class="logo__img" src="../public/img/logo.png" alt=""></div>
         <ul class="nav nav-pills flex-column mb-auto gap-c-40">
           <li class="nav-item">
             <a href="#" class="nav-link d-flex">
@@ -260,7 +261,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-6 h-100 p-0 border-end" id="visible-scroll">
+            <div class="col col-lg-6 h-100 p-0 border-end" id="visible-scroll">
               <div id="conversation" class="conversation position-relative">
                 <div class="d-flex conversation__header w-100">
                   <div class="d-flex p-3">
@@ -275,30 +276,110 @@
                   <i class="bi bi-three-dots"></i>
                 </div>
                 <div class="conversation__messages d-flex flex-column h-100 w-100 p-4 bg-light" data-simplebar>
-                  <div class="messages__reply mb-4 col-7 me-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto qui ad quas saepe ipsam ea doloremque tenetur optio veritatis error pariatur architecto ex beatae eum corrupti temporibus facere, voluptatem voluptatum doloribus mollitia laborum assumenda dignissimos? Quod temporibus cum exercitationem, in perferendis, iste esse dolor quo nulla nesciunt rem repellendus tenetur.</div>
-                  <div class="messages__sent mb-4 col-7 ms-auto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas in eveniet optio minima, quidem laborum molestias incidunt modi id itaque.</div>
-                  <div class="messages__reply mb-4 col-7 me-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto qui ad quas saepe ipsam ea doloremque tenetur optio veritatis error pariatur architecto ex beatae eum corrupti temporibus facere, voluptatem voluptatum doloribus mollitia laborum assumenda dignissimos? Quod temporibus cum exercitationem, in perferendis, iste esse dolor quo nulla nesciunt rem repellendus tenetur.</div>
-                  <div class="messages__sent mb-4 col-7 ms-auto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas in eveniet optio minima, quidem laborum molestias incidunt modi id itaque.</div>
-                  <div class="messages__reply mb-4 col-7 me-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto qui ad quas saepe ipsam ea doloremque tenetur optio veritatis error pariatur architecto ex beatae eum corrupti temporibus facere, voluptatem voluptatum doloribus mollitia laborum assumenda dignissimos? Quod temporibus cum exercitationem, in perferendis, iste esse dolor quo nulla nesciunt rem repellendus tenetur.</div>
-                  <div class="messages__sent mb-4 col-7 ms-auto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas in eveniet optio minima, quidem laborum molestias incidunt modi id itaque.</div>
-                  <div class="messages__reply mb-4 col-7 me-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto qui ad quas saepe ipsam ea doloremque tenetur optio veritatis error pariatur architecto ex beatae eum corrupti temporibus facere, voluptatem voluptatum doloribus mollitia laborum assumenda dignissimos? Quod temporibus cum exercitationem, in perferendis, iste esse dolor quo nulla nesciunt rem repellendus tenetur.</div>
-                  <div class="messages__sent mb-4 col-7 ms-auto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas in eveniet optio minima, quidem laborum molestias incidunt modi id itaque.</div>
-                  <div class="messages__reply mb-4 col-7 me-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto qui ad quas saepe ipsam ea doloremque tenetur optio veritatis error pariatur architecto ex beatae eum corrupti temporibus facere, voluptatem voluptatum doloribus mollitia laborum assumenda dignissimos? Quod temporibus cum exercitationem, in perferendis, iste esse dolor quo nulla nesciunt rem repellendus tenetur.</div>
-                  <div class="messages__sent mb-4 col-7 ms-auto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas in eveniet optio minima, quidem laborum molestias incidunt modi id itaque.</div>
+                  <div class="messages__reply">
+                    <div class="reply__image">
+                      <img class="reply__img" src="./img/profile-avatar.png" alt="profile-avatar">
+                    </div>
+                    <div>
+                      <h2>Emilia Asobi</h2>
+                      <div class="reply__content">
+                        <p class="message">let's find the right date to 
+                          discuss it.</p>
+                        <p class="time-stamp">08:13</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="messages__sent">
+                    <div class="sent__content">
+                      <p class="message">How about on 18th June 2021 at 
+                        Mr. Abdul's coffee cafe.</p>
+                      <p class="time-stamp">08:13</p>
+                    </div>
+                  </div>
+                  <div class="messages__reply">
+                    <div class="reply__image">
+                      <img class="reply__img" src="./img/profile-avatar.png" alt="profile-avatar">
+                    </div>
+                    <div>
+                      <h2>Emilia Asobi</h2>
+                      <div class="reply__content">
+                        <p class="message">Would you like to chat about our product?</p>
+                        <p class="time-stamp">08:13</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="messages__sent">
+                    <div class="sent__content">
+                      <p class="message">Yeah sure, let's do it. :)</p>
+                      <p class="time-stamp">08:13</p>
+                    </div>
+                  </div>
+                  <div class="messages__reply">
+                    <div class="reply__image">
+                      <img class="reply__img" src="./img/profile-avatar.png" alt="profile-avatar">
+                    </div>
+                    <div>
+                      <h2>Emilia Asobi</h2>
+                      <div class="reply__content">
+                        <p class="message">let's find the right date to 
+                          discuss it.</p>
+                        <p class="time-stamp">08:13</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="messages__sent">
+                    <div class="sent__content">
+                      <p class="message">How about on 18th June 2021 at 
+                        Mr. Abdul's coffee cafe.</p>
+                      <p class="time-stamp">08:13</p>
+                    </div>
+                  </div>
+                  <div class="messages__reply">
+                    <div class="reply__image">
+                      <img class="reply__img" src="./img/profile-avatar.png" alt="profile-avatar">
+                    </div>
+                    <div>
+                      <h2>Emilia Asobi</h2>
+                      <div class="reply__content">
+                        <p class="message">Would you like to chat about our product?</p>
+                        <p class="time-stamp">08:13</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="messages__sent">
+                    <div class="sent__content">
+                      <p class="message">Yeah sure, let's do it. :)</p>
+                      <p class="time-stamp">08:13</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="conversation__input bg-danger w-100 position-absolute bottom-0">test</div>
+                <div class="conversation__input d-flex align-items-center justify-content-around w-100 position-absolute bottom-0 flex-nowrap">
+                  <div class="col-1 text-center"><i class="bi bi-folder-fill text-muted fs-3"></i></div>
+                  <div class="col-9 input_message">
+                    <div class="form-control border-0"><input class="w-100 border-0" type="text" placeholder="Write a message..."></div>
+                  </div>
+                  <div class="col-2 input__send d-flex">
+                    <i class="bi bi-three-dots-vertical fs-3"></i>
+                    <i class="bi bi-arrow-right-circle-fill fs-3 text-primary"></i>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col-3 h-100 p-0 border-end">
+            <div class="col-3 d-none d-lg-block h-100 p-0 border-end">
               <div id="contact-info" class="p-c-40">
                 <div class="contact-info__profile mb-c-40">
                   <div class="contact-info__options d-flex justify-content-between align-items-center">
-                    <a class="btn btn-light" href="#">i</a>
-                    <a class="btn btn-close" href="#"></a>
+                    <a class="btn" href="#">
+                      <i class="bi bi-gear-fill"></i>
+                    </a>
+                    <a class="btn" href="#">
+                      <i class="bi bi-x-circle-fill"></i>
+                    </a>
                   </div>
                   <div class="text-center">
-                    <div class="contact-info__profile__image d-inline-block mb-3">
+                    <div class="contact-info__profile__image d-inline-block mb-3 position-relative">
                       <img class="contact-info__profile__img" src="./img/profile-avatar.png" alt="contact-info__profile__img">
+                      <i class="bi bi-check-circle-fill position-absolute bottom-0"></i>
                     </div>
                     <h2 class="contact-info__profile__name text-dark fs-6 mb-2 lh-1 mb-2">Emilia Asobi</h2>
                     <p class="contact-info__profile__title mb-0 text-muted lh-1">UI/UX Designer</p>
@@ -309,7 +390,24 @@
                     <h2 class="contact-info__profile__name text-dark fs-6 mb-0 lh-1">Shared Media</h2>
                     <a class="text-dark link-unstyled" href="#">See All</a>
                   </div>
-                  <div>CAROUSEL</div>
+                  <div>
+                    <!-- Slider main container -->
+                    <div class="swiper-container" id="media-swiper">
+                      <!-- Additional required wrapper -->
+                      <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="contact-info__shared-link">
                   <div class="contact-info__options d-flex justify-content-between align-items-center mb-3">
@@ -362,8 +460,13 @@
       </section>
     </main>
     <script src="./js/app.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-      // new SimpleBar(document.getElementById('visible-scroll'), { autoHide: false });
+      var swiper = new Swiper(".swiper-container", {
+      slidesPerView: 4,
+      spaceBetween: 8,
+      freeMode: true
+    });
     </script>
   </body>
 </html>

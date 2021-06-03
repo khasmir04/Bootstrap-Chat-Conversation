@@ -16,6 +16,19 @@ $spacers: (
   5: $spacer * 3,
   c-40: $spacer * 2.5,
 ) !default;
+// scss-docs-end spacer-variables-maps
+
+// scss-docs-start theme-color-variables
+$primary: #3f3697 !default;
+$secondary: #fb2b76 !default;
+// $success: $green !default;
+// $info: $cyan !default;
+// $warning: $yellow !default;
+// $danger: $red !default;
+// $light: $gray-100 !default;
+// $dark: $gray-900 !default;
+$tertiary: #bbbbbb !default;
+// scss-docs-end theme-color-variables
 
 // scss-docs-start import-stack
 // Configuration
