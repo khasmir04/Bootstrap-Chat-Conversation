@@ -14,13 +14,13 @@
     <!--  -->
     <header id="header" class="border">
       <div class="container-fluid header-container p-3">
-        <div class="row">
-          <div class="col-2">
+        <div class="d-flex">
+          <div class="">
             <div class="d-flex align-items-center">
               <div class="header__avatar__image me-3">
                 <img class="header__avatar__img" src="../public/img/org-avatar.png" alt="org-avatar-image">
               </div>
-              <div class="d-flex flex-column justify-content-center me-2">
+              <div class="d-none d-md-flex flex-column justify-content-center me-2">
                 <h2 class="m-0 fs-6">Team UI</h2>
                 <p class="m-0 fs-6 text-black-50">team@dimo.com</p>
               </div>
@@ -34,19 +34,19 @@
               </div>
             </div>
           </div>
-          <div class="col-3">
+          <div class="d-none d-xl-block ms-c-40">
             <div>
               <p class="m-0 fw-bold">Message</p>
-              <p class="m-0 fs-6 text-black-50">Send your friends a message</p>
+              <p class="m-0 fs-6 text-black-50 text-nowrap">Send your friends a message</p>
             </div>
           </div>
-          <div class="col-5">
+          <div class="header__search ms-c-40">
             <div>
               <input class="form-control" type="text" placeholder="Search something here...">
               </input>
             </div>
           </div>
-          <div class="col-2 d-flex justify-content-end">
+          <div class="d-flex justify-content-end ms-auto">
             <div class="d-flex align-items-center">
               <i class="bi bi-bell-fill fs-4 me-4 text-tertiary"></i>
               <div class="user__avatar__image me-2">
@@ -129,13 +129,16 @@
             <div class="col-3 h-100 p-0 overflow-hidden">
               <div id="contacts">
                 <div class="contacts__header p-4 border-end">
-                  <div class="contacts__header__inbox d-flex justify-content-between">
-                    <p>Inbox<span>4 New</span></p>
-                    <a href="#" class="btn btn-primary">+</a>
+                  <div class="contacts__header__inbox d-flex justify-content-between align-items-center mb-3">
+                    <div class="d-flex align-items-center">
+                      <p class="fw-bold m-0 me-2">Inbox</p>
+                      <p class="btn bg-tag rad rad-12 text-secondary pt-1 pe-2 pb-1 ps-2 mb-0 text-nowrap">4 New</p>
+                    </div>
+                    <i class="bi bi-plus-lg btn btn-primary rounded-circle"></i></a>
                   </div>
-                  <div class="contacts__header__options bg-light d-flex p-2 align-items-stretch">
-                    <div class="col-6"><a class="btn btn-primary w-100" href="#">Open</a></div>
-                    <div class="col-6"><a class="btn btn-light w-100" href="#">Archived</a></div>
+                  <div class="contacts__header__options bg-c-light rounded-3 d-flex p-2 align-items-stretch">
+                    <div class="col-6"><a class="btn bg-white text-primary w-100" href="#">Open</a></div>
+                    <div class="col-6"><a class="btn btn-light text-muted w-100" href="#">Archived</a></div>
                   </div>
                 </div>
                 <div class="contacts__content" data-simplebar>

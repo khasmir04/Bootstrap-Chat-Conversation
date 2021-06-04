@@ -42,6 +42,10 @@ body {
   height: 24px;
 }
 
+.header__search .form-control {
+  min-width: 50px;
+}
+
 .header__avatar__image {
   max-width: 48px;
   width: 100%;
@@ -122,6 +126,16 @@ body {
 
 .conversation__messages {
   max-height: calc(100vh - 232px);
+}
+
+.swiper-container {
+  width: 300px;
+  height: 55px;
+}
+
+.media__item {
+  max-width: 55px;
+  width: 100%;
 }
 
 // Custom css for messages in preparation for API
@@ -233,27 +247,37 @@ body {
   padding: 12px;
 }
 
+.me-c-145 {
+  margin-right: 145px;
+}
+
 .square {
   width: 32px;
   height: 32px;
 }
 
-.swiper-container {
-  width: 300px;
-  height: 55px;
-}
-
-.media__item {
-  max-width: 55px;
-  width: 100%;
+.rad {
+  border-radius: 4px;
+  &.rad-12 {
+    border-radius: 12px;
+  }
+  &.rad-circle {
+    border-radius: 50%;
+  }
 }
 
 // Medium
 @media (min-width: 768px) {
+  .header__search .form-control {
+    min-width: 300px;
+  }
 }
 
 // Large
 @media (min-width: 992px) {
+  .header__search .form-control {
+    min-width: 450px;
+  }
 }
 
 // XLarge
