@@ -15,9 +15,11 @@ $spacers: (
 $primary: #3f3697 !default;
 $secondary: #fb2b76 !default;
 $tertiary: #bbbbbb !default;
+$quaternary: #9babc5 !default;
 $active-chat: #f1f3f9 !default;
 $tag: #fb2b7624 !default;
 $c-light: #fafafa !default;
+$c-white: #fff !default;
 
 // $success: $green !default;
 // $info: $cyan !default;
@@ -35,9 +37,11 @@ $c-light: #fafafa !default;
 // Create your own map
 $custom-colors: (
   "tertiary": $tertiary,
+  "quaternary": $quaternary,
   "active-chat": $active-chat,
   "tag": $tag,
   "c-light": $c-light,
+  "c-white": $c-white,
 );
 
 // Merge the maps
@@ -124,3 +128,18 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // Utilities
 @import "~bootstrap/scss/utilities/api";
 // scss-docs-end import-stack
+
+.btn:focus {
+  box-shadow: none !important;
+}
+
+.btn-check:checked + .btn-outline-c-white {
+  color: $primary;
+}
+
+.btn-outline-c-white {
+  color: $quaternary;
+  &:hover {
+    color: $primary;
+  }
+}

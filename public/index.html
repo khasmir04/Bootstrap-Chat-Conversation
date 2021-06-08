@@ -7,17 +7,16 @@
     <title>Chat Dashboard</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/app.css" />
   </head>
   <body>
     <!--  -->
-    <header id="header" class="border">
+    <header id="header" class="border border-active-chat position-relative">
       <div class="container-fluid header-container p-3">
-        <div class="d-flex">
+        <div class="d-flex align-items-center">
           <div class="">
             <div class="d-flex align-items-center">
-              <div class="header__avatar__image me-3">
+              <div id="header__avatar__image" class="header__avatar__image me-3">
                 <img class="header__avatar__img" src="../public/img/org-avatar.png" alt="org-avatar-image">
               </div>
               <div class="d-none d-md-flex flex-column justify-content-center me-2">
@@ -40,9 +39,10 @@
               <p class="m-0 fs-6 text-black-50 text-nowrap">Send your friends a message</p>
             </div>
           </div>
-          <div class="header__search ms-c-40">
-            <div>
-              <input class="form-control" type="text" placeholder="Search something here...">
+          <div class="header__search m-auto">
+            <div class="input-group flex-nowrap">
+              <span class="input-group-text bg-c-light border-0" id="header__search__text"><i class="bi bi-search fs-6"></i></span>
+              <input class="form-control bg-c-light border-0 fs-6" type="text" placeholder="Search something here..." aria-label="Search something here..." aria-describedby="header__search__text">
               </input>
             </div>
           </div>
@@ -53,7 +53,7 @@
                 <img class="user__avatar__img" src="../public/img/user-avatar.png" alt="user-avatar-img">
               </div>
               <div class="dropdown">
-                <i class="bi bi-chevron-down fs-6 lh-base text-tertiary btn" type="button" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                <i class="bi bi-chevron-down fs-6 lh-base text-tertiary btn pe-0" type="button" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false"></i>
                 <ul class="dropdown-menu" aria-labelledby="dropdownUser" style="right: 0; left: auto;">
                   <li><a class="dropdown-item" href="#">Settings</a></li>
                   <li><a class="dropdown-item" href="#">Logout</a></li>
@@ -65,40 +65,40 @@
       </div>
     </header>
     <main>
-      <aside id="side-menu" class="border-end d-flex flex-column">
+      <aside id="side-menu" class="border-end border-active-chat d-flex flex-column bg-c-white">
         <div class="logo__image text-center pt-c-40 pb-5">
           <img class="logo__img" src="../public/img/logo.png" alt="">
         </div>
-        <ul class="nav nav-pills flex-column mb-auto gap-3">
-          <li class="nav-item">
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item mb-3">
             <a href="#" class="nav-link p-12 ps-c-40 d-flex lh-base align-middle align-items-center">
               <i class="bi bi-speedometer me-3 fs-4 lh-24 text-tertiary"></i>
               <span class="d-inline fs-6 lh-1 text-tertiary">Dashboard</span>
               <p class="notif"></p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mb-3">
             <a href="#" class="nav-link p-12 ps-c-40 d-flex lh-base align-middle align-items-center">
               <i class="bi bi-wallet-fill me-3 fs-4 lh-24 text-tertiary"></i>
               <span class="d-inline fs-6 lh-1 text-tertiary">E-Wallet</span>
               <p class="notif"></p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mb-3">
             <a href="#" class="nav-link p-12 ps-c-40 d-flex lh-base align-middle align-items-center active">
               <i class="bi bi-chat-square-text-fill me-3 fs-4 lh-24 text-tertiary"></i>
               <span class="d-inline fs-6 lh-1 text-tertiary">Chat</span>
               <p class="notif active">1</p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mb-3">
             <a href="#" class="nav-link p-12 ps-c-40 d-flex lh-base align-middle align-items-center">
               <i class="bi bi-person-fill me-3 fs-4 lh-24 text-tertiary"></i>
               <span class="d-inline fs-6 lh-1 text-tertiary">Profile</span>
               <p class="notif"></p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mb-3">
             <a href="#" class="nav-link p-12 ps-c-40 d-flex lh-base align-middle align-items-center">
               <i class="bi bi-folder-fill me-3 fs-4 lh-24 text-tertiary"></i>
               <span class="d-inline fs-6 lh-1 text-tertiary">Transaction</span>
@@ -106,8 +106,8 @@
             </a>
           </li>
         </ul>
-        <ul class="nav nav-pills flex-column mt-auto pb-c-40 gap-3">
-          <li class="nav-item">
+        <ul class="nav nav-pills flex-column mt-auto pb-c-40">
+          <li class="nav-item mb-3">
             <a href="#" class="nav-link p-12 ps-c-40 d-flex lh-base align-middle align-items-center">
               <i class="bi bi-gear-fill me-3 fs-4 lh-24 text-tertiary"></i>
               <span class="d-inline fs-6 lh-1 text-tertiary">Setting</span>
@@ -128,21 +128,30 @@
           <div class="row h-100">
             <div class="col-3 h-100 p-0 overflow-hidden">
               <div id="contacts">
-                <div class="contacts__header p-4 border-end">
+                <div class="contacts__header p-4 border-end border-active-chat">
                   <div class="contacts__header__inbox d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex align-items-center">
-                      <p class="fw-bold m-0 me-2">Inbox</p>
-                      <p class="btn bg-tag rad rad-12 text-secondary pt-1 pe-2 pb-1 ps-2 mb-0 text-nowrap">4 New</p>
+                      <i class="bi bi-envelope-fill d-inline d-md-none text-tertiary fs-4 lh-24"></i>
+                      <p class="d-none d-md-block fw-bold m-0 me-2">Inbox</p>
+                      <p class="notif-inbox btn bg-tag rad rad-circle d-md-none text-secondary pe-2 ps-2 mb-0 me-1 pt-0 pb-0 border-0 text-nowrap">4</p>
+                      <p class="btn bg-tag rad rad-12 d-none d-md-inline text-secondary pt-1 pe-2 pb-1 ps-2 mb-0 text-nowrap">4 New</p>
                     </div>
-                    <i class="bi bi-plus-lg btn btn-primary rounded-circle"></i></a>
+                    <i class="bi bi-plus-circle-fill btn text-primary fs-5 p-0 border-0 lh-1 d-md-none"></i>
+                    <i class="bi bi-plus-circle-fill btn text-primary fs-1 p-0 border-0 lh-1 d-none d-md-inline"></i>
                   </div>
-                  <div class="contacts__header__options bg-c-light rounded-3 d-flex p-2 align-items-stretch">
-                    <div class="col-6"><a class="btn bg-white text-primary w-100" href="#">Open</a></div>
-                    <div class="col-6"><a class="btn btn-light text-muted w-100" href="#">Archived</a></div>
+                  <div class="contacts__header__options btn-group d-flex flex-wrap justify-content-center bg-c-light rounded-3 p-2">
+                    <div class="col-lg-6">
+                      <input type="radio" class="btn-check" name="btnradio" id="rdbOpen" autocomplete="off" checked>
+                      <label class="btn btn-outline-c-white border-0 fw-bold w-100" for="rdbOpen">Open</label>
+                    </div>
+                    <div class="col-lg-6">
+                      <input type="radio" class="btn-check" name="btnradio" id="rdbArchived" autocomplete="off">
+                      <label class="btn btn-outline-c-white border-0 fw-bold w-100" for="rdbArchived">Archived</label>
+                    </div>
                   </div>
                 </div>
                 <div class="contacts__content" data-simplebar>
-                  <a href="#" class="contacts__conversation border-top p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
+                  <a href="#" class="contacts__conversation border-top border-active-chat p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
                     <div class="d-flex align-items-center">
                       <div class="contact__avatar__image me-0 me-lg-2">
                         <img class="contact__avatar__img" src="../public/img/contact-avatar.png" alt="contact-avatar-img">
@@ -157,7 +166,7 @@
                       <p class="mb-0 fs-6 text-muted lh-1 text-end"><span class="notif active">1</span></p>
                     </div>
                   </a>
-                  <a href="#" class="contacts__conversation border-top p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
+                  <a href="#" class="contacts__conversation border-top border-active-chat p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
                     <div class="d-flex align-items-center">
                       <div class="contact__avatar__image me-0 me-lg-2">
                         <img class="contact__avatar__img" src="../public/img/contact-avatar.png" alt="contact-avatar-img">
@@ -172,7 +181,7 @@
                       <p class="mb-0 fs-6 text-muted lh-1 text-end"><span class="notif active">3</span></p>
                     </div>
                   </a>
-                  <a href="#" class="contacts__conversation border-top p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between active">
+                  <a href="#" class="contacts__conversation border-top border-active-chat p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between active">
                     <div class="d-flex align-items-center">
                       <div class="contact__avatar__image me-0 me-lg-2">
                         <img class="contact__avatar__img" src="../public/img/contact-avatar.png" alt="contact-avatar-img">
@@ -187,7 +196,7 @@
                       <p class="mb-0 fs-6 text-muted lh-1 text-end"><span class="notif"></span></p>
                     </div>
                   </a>
-                  <a href="#" class="contacts__conversation border-top p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
+                  <a href="#" class="contacts__conversation border-top border-active-chat p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
                     <div class="d-flex align-items-center">
                       <div class="contact__avatar__image me-0 me-lg-2">
                         <img class="contact__avatar__img" src="../public/img/contact-avatar.png" alt="contact-avatar-img">
@@ -202,7 +211,7 @@
                       <p class="mb-0 fs-6 text-muted lh-1 text-end"><span class="notif active">2</span></p>
                     </div>
                   </a>
-                  <a href="#" class="contacts__conversation border-top p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
+                  <a href="#" class="contacts__conversation border-top border-active-chat p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
                     <div class="d-flex align-items-center">
                       <div class="contact__avatar__image me-0 me-lg-2">
                         <img class="contact__avatar__img" src="../public/img/contact-avatar.png" alt="contact-avatar-img">
@@ -217,7 +226,7 @@
                       <p class="mb-0 fs-6 text-muted lh-1 text-end"><span class="notif"></span></p>
                     </div>
                   </a>
-                  <a href="#" class="contacts__conversation border-top p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
+                  <a href="#" class="contacts__conversation border-top border-active-chat p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
                     <div class="d-flex align-items-center">
                       <div class="contact__avatar__image me-0 me-lg-2">
                         <img class="contact__avatar__img" src="../public/img/contact-avatar.png" alt="contact-avatar-img">
@@ -232,7 +241,7 @@
                       <p class="mb-0 fs-6 text-muted lh-1 text-end"><span class="notif active">2</span></p>
                     </div>
                   </a>
-                  <a href="#" class="contacts__conversation border-top p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
+                  <a href="#" class="contacts__conversation border-top border-active-chat p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
                     <div class="d-flex align-items-center">
                       <div class="contact__avatar__image me-0 me-lg-2">
                         <img class="contact__avatar__img" src="../public/img/contact-avatar.png" alt="contact-avatar-img">
@@ -247,7 +256,7 @@
                       <p class="mb-0 fs-6 text-muted lh-1 text-end"><span class="notif"></span></p>
                     </div>
                   </a>
-                  <a href="#" class="contacts__conversation border-top p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
+                  <a href="#" class="contacts__conversation border-top border-active-chat p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
                     <div class="d-flex align-items-center">
                       <div class="contact__avatar__image me-0 me-lg-2">
                         <img class="contact__avatar__img" src="../public/img/contact-avatar.png" alt="contact-avatar-img">
@@ -262,7 +271,7 @@
                       <p class="mb-0 fs-6 text-muted lh-1 text-end"><span class="notif"></span></p>
                     </div>
                   </a>
-                  <a href="#" class="contacts__conversation border-top p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
+                  <a href="#" class="contacts__conversation border-top border-active-chat p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
                     <div class="d-flex align-items-center">
                       <div class="contact__avatar__image me-0 me-lg-2">
                         <img class="contact__avatar__img" src="../public/img/contact-avatar.png" alt="contact-avatar-img">
@@ -277,7 +286,7 @@
                       <p class="mb-0 fs-6 text-muted lh-1 text-end"><span class="notif"></span></p>
                     </div>
                   </a>
-                  <a href="#" class="contacts__conversation border-top p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
+                  <a href="#" class="contacts__conversation border-top border-active-chat p-4 link-unstyled d-flex align-items-center justify-content-center justify-content-lg-between">
                     <div class="d-flex align-items-center">
                       <div class="contact__avatar__image me-0 me-lg-2">
                         <img class="contact__avatar__img" src="../public/img/contact-avatar.png" alt="contact-avatar-img">
@@ -295,7 +304,7 @@
                 </div>
               </div>
             </div>
-            <div class="col col-lg-6 h-100 p-0 border-end" id="visible-scroll">
+            <div class="col col-lg-6 h-100 p-0 border-end border-active-chat" id="visible-scroll">
               <div id="conversation" class="conversation position-relative">
                 <div class="conversation__header d-flex align-items-center justify-content-between w-100">
                   <div class="d-flex p-3">
@@ -307,8 +316,8 @@
                       <p class="m-0 fs-6 text-black-50">Last seen recently</p>
                     </div>
                   </div>
-                  <div class="dropdown">
-                    <i class="bi bi-three-dots text-tertiary d-flex align-items-center justify-content-center me-3 border rounded-circle fs-6 square"  type="button" id="dropdownChat" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                  <div class="dropdown dropstart">
+                    <i class="bi bi-three-dots text-tertiary d-flex align-items-center justify-content-center fs-6 me-3 border rounded-circle square"  type="button" id="dropdownChat" data-bs-toggle="dropdown" aria-expanded="false"></i>
                     <ul class="dropdown-menu" aria-labelledby="dropdownOrg">
                       <li><a class="dropdown-item" href="#">Delete Conversation</a></li>
                       <li><a class="dropdown-item" href="#">Emoticons</a></li>
@@ -317,7 +326,7 @@
                 </div>
                 <div class="conversation__messages d-flex flex-column h-100 w-100 p-4 bg-active-chat" data-simplebar>
                   <div class="messages__reply">
-                    <div class="reply__image">
+                    <div class="reply__image me-2">
                       <img class="reply__img" src="./img/profile-avatar.png" alt="profile-avatar">
                     </div>
                     <div>
@@ -337,7 +346,7 @@
                     </div>
                   </div>
                   <div class="messages__reply">
-                    <div class="reply__image">
+                    <div class="reply__image me-2">
                       <img class="reply__img" src="./img/profile-avatar.png" alt="profile-avatar">
                     </div>
                     <div>
@@ -355,7 +364,7 @@
                     </div>
                   </div>
                   <div class="messages__reply">
-                    <div class="reply__image">
+                    <div class="reply__image me-2">
                       <img class="reply__img" src="./img/profile-avatar.png" alt="profile-avatar">
                     </div>
                     <div>
@@ -375,7 +384,7 @@
                     </div>
                   </div>
                   <div class="messages__reply">
-                    <div class="reply__image">
+                    <div class="reply__image me-2">
                       <img class="reply__img" src="./img/profile-avatar.png" alt="profile-avatar">
                     </div>
                     <div>
@@ -394,9 +403,10 @@
                   </div>
                 </div>
                 <div class="conversation__input d-flex align-items-center w-100 position-absolute bottom-0 flex-nowrap">
-                  <div class="col-1 ps-3"><i class="bi bi-folder-fill text-tertiary fs-3"></i></div>
-                  <div class="col-9 input_message">
-                    <div class="form-control border-0"><input class="w-100 border-0" type="text" placeholder="Write a message..."></div>
+                  <div class="col-1 ps-3"><i class="bi bi-folder-fill text-tertiary fs-6"></i></div>
+                  <div class="col-9 input__message">
+                    <div class="border-0">
+                      <input class="form-control w-100 border-0 fs-6" type="text" placeholder="Write a message..." aria-label="Write a message..." aria-describedby="input__message__text"></div>
                   </div>
                   <div class="col-2 input__send d-flex justify-content-end align-items-center">
                     <div class="dropdown">
@@ -411,8 +421,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-3 d-none d-lg-block h-100 p-0 border-end">
-              <div id="contact-info" class="p-c-40">
+            <div class="col-3 d-none d-lg-block h-100 p-0 border-end border-active-chat">
+              <div id="contact-info" class="ps-c-40 pe-c-40 pt-4" data-simplebar>
                 <div class="contact-info__profile mb-c-40">
                   <div class="contact-info__options d-flex justify-content-between align-items-center">
                     <a class="btn p-0" href="#">
@@ -438,29 +448,29 @@
                   </div>
                   <div>
                     <!-- Slider main container -->
-                    <div class="swiper-container w-100" id="media-swiper">
+                    <div class="swiper-container" id="media-swiper">
                       <!-- Additional required wrapper -->
                       <div class="swiper-wrapper">
                         <!-- Slides -->
-                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
-                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
-                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
-                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
-                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
-                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
-                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
-                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
-                        <div class="swiper-slide media__item"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item w-100"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item w-100"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item w-100"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item w-100"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item w-100"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item w-100"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item w-100"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item w-100"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
+                        <div class="swiper-slide media__item w-100"><a href="#"><img src="./img/media-item.png" alt=""></a></div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="contact-info__shared-link">
+                <div class="contact-info__shared-link mb-3">
                   <div class="contact-info__options d-flex justify-content-between align-items-center mb-3">
                     <h2 class="contact-info__profile__name text-dark fs-6 mb-0 lh-1">Shared Link</h2>
                     <a class="text-dark link-unstyled" href="#">See All</a>
                   </div>
-                  <div class="contact-info__shared-link__items" data-simplebar>
+                  <div class="contact-info__shared-link__items w-100" data-simplebar>
                     <a href="#" class="shared-link__item link-unstyled d-flex align-items-center mb-3">
                       <div class="shared-link__item__image me-2">
                         <img class="shared-link__item__img" src="../public/img/link-icon.png" alt="contact-avatar-img">
@@ -497,6 +507,11 @@
                         <p class="mb-0 text-muted lh-1">https://drinnnle.com/shots...</p>
                       </div>
                     </a>
+                  </div>
+                </div>
+                <div class="contact-info__ad d-flex justify-content-center align-items-center mt-1">
+                  <div class="go-pro__image">
+                    <img class="go-pro__img" src="./img/go-pro.png" alt="go-pro image">
                   </div>
                 </div>
               </div>
@@ -507,12 +522,28 @@
     </main>
     <script src="./js/app.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- <script src="./../node_modules/swiper/swiper-bundle.min.js"></script> -->
     <script>
       var swiper = new Swiper(".swiper-container", {
       slidesPerView: 4,
       spaceBetween: 8,
       freeMode: true
     });
+
+    let dashboardButton = document.getElementById("header__avatar__image");
+    let dashboard = document.getElementById("side-menu");
+    
+    const displayDashboard = () => {
+      if(window.innerWidth < 1200){
+        if(!(dashboard.classList.contains("show-dashboard")))
+          dashboard.classList.add("show-dashboard");
+        else
+          dashboard.classList.remove("show-dashboard");
+      }
+    }
+
+    dashboardButton.addEventListener('click', displayDashboard);
+    window.onresize = displayDashboard;
     </script>
   </body>
 </html>
