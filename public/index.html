@@ -542,8 +542,13 @@
       }
     }
 
+    const checkScreen = () => {
+      if (window.innerWidth >= 1200)
+      displayDashboard;
+    }
+
     dashboardButton.addEventListener('click', displayDashboard);
-    window.onresize = displayDashboard;
+    window.onresize = checkScreen;
     </script>
   </body>
 </html>
